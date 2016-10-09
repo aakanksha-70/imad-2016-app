@@ -8,7 +8,7 @@ var articleOne={
     title: 'Article One: Aakanksha kuamri',
     heading: 'Article One',
     date: 'Sep 5,2016',
-    Content: `<p>
+    content: `<p>
                         This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
                 </p>
                 <p>
