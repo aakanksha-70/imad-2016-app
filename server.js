@@ -5,32 +5,32 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles = {
-'article-one':{
-    title: 'Article One: Aakanksha kuamri',
-    heading: 'Article One',
-    date: 'Sep 5,2016',
-    content: `<p>
-                        This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
-                </p>
-                <p>
-                        This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
-                  </p>
-                  <p>
-                        This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
-                  </p>
-                `
-    
-},
-'article-two':{ 
-    title: 'Article Two: Aakanksha kuamri',
-    heading: 'Article Two',
-    date: 'Sep 10,2016',
-    content: `<p>
-                        This is my second article. This content is showned here in article two.This is my second article. This content is showned here in article two.This is my second article. This content is showned here in article two.This is my second article. This content is showned here in article two.
-                </p>
-               
-                `},
-'article-three':{
+        'article-one':{
+            title: 'Article One: Aakanksha kuamri',
+            heading: 'Article One',
+            date: 'Sep 5,2016',
+            content: `<p>
+                                This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
+                        </p>
+                        <p>
+                                This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
+                          </p>
+                          <p>
+                                This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.This is my first article. This content is showned here in article one.
+                          </p>
+                        `
+            
+        },
+        'article-two':{ 
+            title: 'Article Two: Aakanksha kuamri',
+            heading: 'Article Two',
+            date: 'Sep 10,2016',
+            content: `<p>
+                                This is my second article. This content is showned here in article two.This is my second article. This content is showned here in article two.This is my second article. This content is showned here in article two.This is my second article. This content is showned here in article two.
+                        </p>
+                       
+                        `},
+        'article-three':{
      title: 'Article Three: Aakanksha kuamri',
     heading: 'Article Three',
     date: 'Sep 15,2016',
@@ -83,12 +83,13 @@ function createTemplate (data) {
 `;
 return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/:articleName',function (req, res){
-    var articleName = req.pharams.articleName;
+    var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
 
