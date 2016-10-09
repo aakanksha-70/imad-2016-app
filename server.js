@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articleone={
+var articleOne={
     title: 'Article One: Aakanksha kuamri',
     heading: 'Article One',
     date: 'Sep 5,2016',
@@ -22,37 +22,37 @@ var articleone={
 };
 
 function createTemplate (data) {
-    var title = data.title;
-    var heading = data.heading;
-    var content = data.content;
-    var date = data.date;
-    var htmlTemplete= `
-    <html>
-        <head>
-            <title>
-                ${title}
-            </title>
-            <meta rane="viewport" content="width=device-width, inttial-scale=1" />
-            <link href="/ui/style.css" rel="stylesheet" />
-        </head>
-            <body>
-                <div>
-                    <a href='/'>Home </a>
-                </div>
-                <hr/>
-                <div class= "container">
-                    <h3>
-                        ${heading}
-                    </h3>
+        var title = data.title;
+        var heading = data.heading;
+        var content = data.content;
+        var date = data.date;
+        var htmlTemplete= `
+        <html>
+            <head>
+                <title>
+                    ${title}
+                </title>
+                <meta rane="viewport" content="width=device-width, inttial-scale=1" />
+                <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+                <body>
                     <div>
-                        ${date}
+                        <a href='/'>Home </a>
                     </div>
-                    <div>
-                        ${Content}
+                    <hr/>
+                    <div class= "container">
+                        <h3>
+                            ${heading}
+                        </h3>
+                        <div>
+                            ${date}
+                        </div>
+                        <div>
+                            ${Content}
+                        </div>
                     </div>
-                </div>
-            </body>
-    </html>
+                </body>
+        </html>
 `;
 return htmlTemplate;
 }
