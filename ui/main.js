@@ -2,6 +2,13 @@ console.log('Loaded!');
 
 var element = document.getElementById('main-text');
 element.innerHTML='New value';
+function moveLeft (){
+    marginRight = marginRight + 1;
+    element.style.marginRight = marginRight + 'px';
+}
+element.onclick = function () {
+    var inter = setInterval(moveLeft, 50);
+};
 
 var img = document.getElementById('madi');
 var marginLeft=0;
